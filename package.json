@@ -1,0 +1,21 @@
+{
+  "name": "generator-basic-html",
+  "version": "0.0.1",
+  "description": "A simple html generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "yeoman-generator",
+    "html"
+  ],
+  "author": "Lucas deGomez",
+  "license": "ISC",
+  "files": [
+    "generators"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^1.1.1"
+  }
+}
