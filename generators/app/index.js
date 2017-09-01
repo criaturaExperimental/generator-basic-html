@@ -10,7 +10,7 @@ module.exports = class extends Generator {
   }
 
   initializing() {
-    this.log('Welcome to my JUNGLE');
+    this.log('Welcome to my JUNGLE!');
   }
 
   prompting() {
@@ -18,36 +18,15 @@ module.exports = class extends Generator {
       type: 'input',
       name: 'title',
       message: 'Your web title',
-      default: 'Home' // Default to current folder name
+      default: 'Home'
     }, {
-      type: 'confirm',
-      name: 'cool',
-      message: 'Would you like to enable the Cool feature?',
-      store: true
-    }, {
-      type: 'list',
+      type: 'input',
       name: 'author',
-      message: 'Select your authoring',
-      choices: [
-        'Anonymous',
-        'cool',
-        'Lucas deGomez'
-      ]
-    }, {
-      type: 'checkbox',
-      name: 'files',
-      message: 'Initialize this?',
-      choices: [
-        'JavaScript',
-        'Css'
-      ]
+      message: 'Author',
+      default: 'Lucas deGomez'
     }]).then((answers) => {
-      this.log('app name', answers.title);
       this.title = answers.title
-      this.log('cool feature', answers.cool);
       this.author = answers.author;
-      this.log('files?', answers.files);
-      this.options = answers.files;
     });
   }
 
@@ -60,16 +39,24 @@ module.exports = class extends Generator {
         author: this.author
       }
     );
-  }
-
-  method1() {
-    this.log('method 1 just ran');
+    this.fs.copy(
+      this.templatePath('style.css'),
+      this.destinationPath('css/style.css')
+    );
+    this.fs.copy(
+      this.templatePath('normalize.css'),
+      this.destinationPath('css/_normalize.css')
+    );
+    this.fs.copy(
+      this.templatePath('script.js'),
+      this.destinationPath('js/script.js')
+    );
   }
 
   end() {
-    this.log('Goodbye my friend');
+    this.log('Live long and prosper,.. HAPPY CODING!');
     this.fs.delete(
-      // cleans up Yeoman rc
+      // cleans up Yeoman rc footprint
       this.destinationPath('.yo-rc.json')
     )
   }
