@@ -1,16 +1,17 @@
-var Generator = require('yeoman-generator');
+'use strict';
+const Generator = require('yeoman-generator');
+const chalk = require('chalk');
 
 module.exports = class extends Generator {
   paths() {
     this.sourceRoot();
     // returns './templates'
-
     this.templatePath('index.js');
     // returns './templates/index.js'
   }
 
   initializing() {
-    this.log('Welcome to my JUNGLE!');
+    this.log(`Welcome to my ${chalk.underline.red('JUNGLE')}!`);
   }
 
   prompting() {
@@ -27,7 +28,7 @@ module.exports = class extends Generator {
     }, {
       type: 'confirm',
       name: 'normalize',
-      message: 'Would you like to use normalize?'
+      message: `Would you like to use ${chalk.bgYellow('normalize')}?`
     }]).then((answers) => {
       this.title = answers.title;
       this.author = answers.author;
