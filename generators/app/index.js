@@ -39,7 +39,7 @@ module.exports = class extends Generator {
     // Object passed to template
     let template_info = {
       title: this.title,
-      author: this.author.answers,
+      author: this.author,
       normalize: false
     }
     // Object builder
