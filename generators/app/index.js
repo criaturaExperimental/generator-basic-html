@@ -28,7 +28,7 @@ module.exports = class extends Generator {
     }, {
       type: 'confirm',
       name: 'normalize',
-      message: `Would you like to use ${chalk.bgYellow('normalize')}?`
+      message: `Would you like to use ${chalk.bgRed('normalize')}?`
     }]).then((answers) => {
       this.title = answers.title;
       this.author = answers.author;
@@ -69,7 +69,7 @@ module.exports = class extends Generator {
   }
 
   end() {
-    this.log('Live long and prosper,.. HAPPY CODING!');
+    this.log(`Live long and prosper\n>>> ${chalk.bgMagenta('HAPPY CODING!')} <<<`);
     this.fs.delete(
       // cleans up Yeoman rc footprint
       this.destinationPath('.yo-rc.json')
