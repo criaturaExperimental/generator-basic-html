@@ -4,8 +4,8 @@
         <title><%= title %></title>
         <meta charset="UTF-8">
         <meta name="author" content="<%= author %>">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/_normalize.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1"><% if (normalize) { %>
+        <%- normalize %><% } %>
         <link href="css/style.css" rel="stylesheet">
         <script src="js/script.js"></script>
     </head>
