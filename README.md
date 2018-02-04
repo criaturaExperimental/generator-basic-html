@@ -4,9 +4,11 @@ Scaffolds a very basic html5 proyect with some customization.
 
 # Instalation
 
-        npm install <this repo url>
+Clone this project in a folder of your election, enter the cloned folder and run
+        
+        npm link
 
-Run it in your project folder and follow the instructions
+Make your new project folder whenever you like and inside that folder run and follow the instructions
 
         yo basic-html
 
